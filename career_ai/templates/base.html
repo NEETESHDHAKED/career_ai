@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Career AI - Resume Analyzer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="background:#f8f9fa">
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/dashboard/">CareerAI</a>
+      <div>
+        <a href="/dashboard/" class="btn btn-sm btn-outline-light">Dashboard</a>
+        <a href="/resumes/upload/" class="btn btn-sm btn-outline-light">Upload</a>
+        <a href="/logout/" class="btn btn-sm btn-danger">Logout</a>
+      </div>
+    </div>
+  </nav>
+  {% block content %}{% endblock %}
+</body>
+</html>

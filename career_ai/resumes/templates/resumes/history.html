@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html><head><script src="https://cdn.tailwindcss.com"></script></head>
+<body class="bg-[#0f172a] text-white p-8">
+<div class="max-w-3xl mx-auto">
+  <h1 class="text-2xl font-bold mb-6">Your Resume History</h1>
+  {% for r in resumes %}
+  <div class="bg-white/5 border border-white/10 p-4 rounded-xl flex justify-between mb-3">
+    <span class="text-sm">{{ r.file.name }} - {{ r.uploaded_at|date:"d M Y" }}</span>
+    <span class="bg-cyan-400 text-black px-3 py-1 rounded-full text-xs font-bold">{{ r.ats_score }}%</span>
+  </div>
+  {% empty %}<p class="text-slate-400">No resumes yet</p>{% endfor %}
+  <a href="/resumes/upload/" class="text-cyan-400 text-sm mt-4 inline-block">+ Upload New</a>
+</div>
+</body></html>

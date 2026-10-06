@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html><head>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#0f172a] text-white flex items-center justify-center min-h-screen" style="font-family:Inter">
+<div class="bg-white/5 border border-white/10 p-8 rounded-[24px] w-[380px]">
+<h1 class="text-2xl font-bold mb-1">Career<span class="text-cyan-400">AI</span></h1>
+<p class="text-sm text-slate-400 mb-6">Login to your account</p>
+<p class="text-red-400 text-sm mb-2">{{ error }}</p>
+<form method="post">{% csrf_token %}
+<input name="username" placeholder="Username" class="w-full bg-white/5 border border-white/10 p-3 rounded-xl mb-3 outline-none" required>
+<input name="password" type="password" placeholder="Password" class="w-full bg-white/5 border border-white/10 p-3 rounded-xl mb-4 outline-none" required>
+<button class="w-full bg-cyan-400 text-black py-3 rounded-xl font-semibold">Login</button>
+</form>
+<p class="text-xs text-center mt-4 text-slate-400">New? <a href="/register/" class="text-cyan-400">Register</a></p>
+</div></body></html>
