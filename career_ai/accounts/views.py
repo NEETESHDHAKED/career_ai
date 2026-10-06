@@ -37,8 +37,8 @@ def dashboard(request):
     if last_resume:
         skills = (last_resume.skills or "").lower()
         score = last_resume.ats_score
-        if "not a resume" in skills or "id card" in skills:
-            feedback = "Ye file resume nahi hai! ID Card upload mat karo. Sahi resume PDF dalo."
+        if "not a resume" in skills or "id card" in skills or "sahi resume" in skills:
+            feedback = "Sahi resume PDF dalo."
             jobs = []
         elif score < 70:
             feedback = "Add more projects, numbers, and quantifiable achievements."
@@ -53,6 +53,6 @@ def dashboard(request):
             jobs.append(f"Backend Developer - {min(92, score+3)}% Match")
         if "react" in skills or "javascript" in skills:
             jobs.append(f"Frontend Developer - {min(90, score+2)}% Match")
-        if not jobs and "not a resume" not in skills:
+        if not jobs and "not a resume" not in skills and "sahi resume" not in skills:
             jobs = [f"Software Intern - {score}% Match"]
     return render(request, 'accounts/dashboard.html', {'last_resume': last_resume, 'feedback': feedback, 'jobs': jobs})
