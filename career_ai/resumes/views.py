@@ -16,14 +16,14 @@ def extract_text_from_file(file_path):
 def calculate_score_and_skills(text, filename=""):
     fname = filename.lower()
     if "college" in fname and "id" in fname or "id_card" in fname or "admit" in fname:
-        return 15, "Not a Resume - ID Card / College Card hai"
+        return 15, "Not a Resume "
     if not text or len(text.strip()) < 50:
         return 15, "Not a Resume - Invalid File hai"
     low = text.lower()
     if "principal" in low and "student" in low and "dob" in low:
-        return 15, "Not a Resume - ID Card hai"
+        return 15, "Not a Resume "
     if "education" not in low and "experience" not in low and "project" not in low and "skill" not in low and "email" not in low:
-        return 15, "Not a Resume - ID Card hai"
+        return 15, "Not a Resume "
     skills_list = ["python","django","java","react","sql","html","css","javascript"]
     found = [s for s in skills_list if s in low]
     if not found:
